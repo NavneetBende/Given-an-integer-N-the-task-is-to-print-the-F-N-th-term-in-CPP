@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//Function to calculate N-th term
+int term(int calculated, int current, int N) 
+{
+  int i, result = 0;
+
+  while(current != N + 1){ 
+
+    int cur = 1;
+    // product of terms till current
+    for (i = calculated; i < calculated + current; i++)
+       cur *= i; 
+
+    calculated=i;
+    result += cur;
+    current++;
+  }
+   
+   return result; 
+}
+
+// Driver Code
+int main()
+{
+  int N = 3;
+
+  cout<<term(1, 1, N);
+
+  return 0;
+}
